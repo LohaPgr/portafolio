@@ -231,16 +231,45 @@ li {
   width: 90%;
   flex-wrap: wrap;
 }
-.portafolio-content .figure {
+.portafolio-content figure {
   max-width: 250px;
   max-height: 600px;
   box-shadow: var(--box-light);
 }
-.portafolio-content .figure img {
+.portafolio-content figure img {
   width: 100%;
   height: auto;
 }
-
+.portafolio-content .portafolio-description {
+  padding: 0px 10px;
+}
+.portafolio-content .portafolio-technologies {
+  display: flex;
+  justify-content: space-around;
+}
+.portafolio-content h4 {
+  margin: 12px 0px;
+  font-size: 120%;
+  text-align: start;
+}
+.portafolio-content p {
+  text-align: start;
+}
+.portafolio-content h5 {
+  margin: 12px 0px;
+  font-size: 90%;
+  text-align: start;
+}
+.portafolio-content a {
+  display: inline-block;
+  margin: 12px 0px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: black;
+}
+.portafolio-content a:hover {
+  color: midnightblue;
+}
 /* button section */
 .scroll-top-btn {
   position: fixed;
@@ -332,9 +361,39 @@ footer {
     font-size: 85%;
     width: 95%;
   }
-  .portafolio-content .figure {
+  .portafolio-content figure {
     max-width: 200px;
     max-height: 600px;
+  }
+  .portafolio-content .portafolio-description {
+    padding: 0px 10px;
+  }
+  .portafolio-content .portafolio-technologies {
+    display: flex;
+    justify-content: space-around;
+  }
+  .portafolio-content h4 {
+    margin: 12px 0px;
+    font-size: 120%;
+    text-align: start;
+  }
+  .portafolio-content p {
+    text-align: start;
+  }
+  .portafolio-content h5 {
+    margin: 12px 0px;
+    font-size: 90%;
+    text-align: start;
+  }
+  .portafolio-content a {
+    display: inline-block;
+    margin: 12px 0px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: black;
+  }
+  .portafolio-content a:hover {
+    color: midnightblue;
   }
   /* contact section */
   .contact-container {
@@ -558,13 +617,45 @@ footer {
     gap: 20px;
     width: 90%;
   }
-  .portafolio-content .figure {
+  .portafolio-content figure {
     max-width: 280px;
-    max-height: 300px;
+    max-height: 900px;
     box-shadow: var(--box-light);
+    border-radius: 10px;
+    overflow: hidden;
   }
-  .portafolio-content .figure img {
+  .portafolio-content figure img {
     width: 100%;
     height: auto;
+  }
+  .portafolio-content .portafolio-description {
+    padding: 0px 10px;
+  }
+  .portafolio-content .portafolio-technologies {
+    display: flex;
+    justify-content: space-around;
+  }
+  .portafolio-content h4 {
+    margin: 12px 0px;
+    font-size: 120%;
+    text-align: start;
+  }
+  .portafolio-content p {
+    text-align: start;
+  }
+  .portafolio-content h5 {
+    margin: 12px 0px;
+    font-size: 90%;
+    text-align: start;
+  }
+  .portafolio-content a {
+    display: inline-block;
+    margin: 12px 0px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: black;
+  }
+  .portafolio-content a:hover {
+    color: midnightblue;
   }
 }

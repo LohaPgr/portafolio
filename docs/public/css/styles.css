@@ -135,7 +135,7 @@ li {
 }
 /* hero image */
 .hero-image {
-  background-image: url("/public/img/developer.jpg");
+  background-image: url("../img/developer.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -596,7 +596,7 @@ footer {
   }
   /* hero image */
   .hero-image {
-    background-image: url("/public/img/developer.jpg");
+    background-image: url("../img/developer.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

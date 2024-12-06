@@ -243,20 +243,32 @@ li {
   flex-wrap: wrap;
 }
 .portafolio-content figure {
-  max-width: 250px;
-  max-height: 600px;
+  max-width: 270px;
+  margin: auto;
   box-shadow: var(--box-light);
+  border-radius: 5px;
+  display: flex;
+	flex-direction: column;
+  height: auto;
+  overflow: hidden;
 }
 .portafolio-content figure img {
   width: 100%;
-  height: auto;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
 }
 .portafolio-content .portafolio-description {
   padding: 0px 10px;
+  display: flex;
+	flex-direction: column;
+	gap: 10px;
+	flex-grow: 1;
+	justify-content: space-between;
 }
 .portafolio-content .portafolio-technologies {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
 }
 .portafolio-content h4 {
   margin: 12px 0px;

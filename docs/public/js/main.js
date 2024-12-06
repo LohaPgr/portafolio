@@ -6,7 +6,7 @@ import form from "./dom/contact-form.js";
 document.addEventListener("DOMContentLoaded", () => {
     
     // btnScroll(".scroll-top-btn");
-    form();
+    // form();
 })
 darkTheme(".theme-dark", "dark-mode");
 

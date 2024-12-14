@@ -55,6 +55,6 @@ Una API sencilla para consultar una colección de recetas de comida peruana. Ofr
 
 ## Contacto
 
-Si tienes alguna consulta o deseas ponerte en contacto conmigo para colaborar en un proyecto, puedes escribirme a mis redes sociales que se encuentran en mi portafolio => [portafolio](https://tu-usuario.github.io/).
+Si tienes alguna consulta o deseas ponerte en contacto conmigo para colaborar en un proyecto, puedes escribirme a mis redes sociales que se encuentran en mi portafolio => [portafolio](https://lohapgr.github.io/portafolio/).
 
 ---

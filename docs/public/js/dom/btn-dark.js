@@ -1,46 +1,66 @@
-let d = document,
-ls = localStorage;
 export default function darkTheme(btn, classDark) {
-  const $themeBtn = d.querySelector(btn),
-    $selectors = d.querySelectorAll("[data-dark]");
-  let $li = d.querySelector(`${btn} .bi`);
-  console.log($selectors);
+    const $themeBtn = document.querySelector(btn);
+    const $selectors = document.querySelectorAll('[data-theme]');
+    const $icon = $themeBtn.querySelector('i');
 
-  const dark = () => {
-    $li.classList.replace("bi-moon-stars-fill", "bi-brightness-high-fill");
-    $selectors.forEach((el) => {
-      el.classList.add(classDark);
-    });
-    ls.setItem("theme", "dark");
-  };
-  const light = () => {
-    $li.classList.replace("bi-brightness-high-fill", "bi-moon-stars-fill");
-    $selectors.forEach((el) => {
-      el.classList.remove(classDark);
-    });
-    ls.setItem("theme", "light");
-  };
+    const themes = {
+        light: {
+            icon: 'bi-moon-stars-fill',
+            label: 'Cambiar a modo oscuro'
+        },
+        dark: {
+            icon: 'bi-brightness-high-fill',
+            label: 'Cambiar a modo claro'
+        }
+    };
 
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(btn) || e.target.matches(`${btn} *`)) {
-      if ($li.classList.contains("bi-moon-stars-fill")) {
-        dark();
-      } else {
-        light();
-      }
-      console.log($li.classList);
-    }
-  });
-  d.addEventListener("DOMContentLoaded", e => {
-    console.log(ls.getItem("theme"));
-    if (ls.getItem("theme") === null) {
-        ls.setItem("theme", "light");
-    }
-    if (ls.getItem("theme") === "light") {
-        light();
-    }
-    if(ls.getItem("theme") === "dark") {
-        dark();
-    }
-  })
+    const applyTheme = (theme) => {
+        const isDark = theme === 'dark';
+        
+        // Actualizar icono y atributos
+        $icon.className = themes[theme].icon;
+        $themeBtn.setAttribute('aria-label', themes[theme].label);
+        
+        // Aplicar clase a elementos
+        $selectors.forEach(el => {
+            el.setAttribute('data-theme', theme);
+            el.classList.toggle(classDark, isDark);
+        });
+        
+        // Guardar preferencia
+        localStorage.setItem('theme', theme);
+        
+        // Actualizar meta theme-color
+        this.updateMetaThemeColor(isDark);
+    };
+
+    this.updateMetaThemeColor = (isDark) => {
+        let metaTheme = document.querySelector('meta[name="theme-color"]');
+        if (!metaTheme) {
+            metaTheme = document.createElement('meta');
+            metaTheme.name = 'theme-color';
+            document.head.appendChild(metaTheme);
+        }
+        metaTheme.content = isDark ? '#1a1a1a' : '#ffffff';
+    };
+
+    // Event listeners
+    document.addEventListener('click', (e) => {
+        if (e.target.closest(btn)) {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        }
+    });
+
+    // Inicializar tema
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const preferredTheme = savedTheme !== 'light' && savedTheme !== 'dark' 
+            ? (systemPrefersDark ? 'dark' : 'light')
+            : savedTheme;
+        
+        applyTheme(preferredTheme);
+    });
 }

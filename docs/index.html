@@ -1,233 +1,278 @@
 <!DOCTYPE html>
-<html lang="es" data-dark>
-  <head>
+<html lang="es" data-theme="light">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Desarrollador web Full Stack con experiencia en la creación de sitios y aplicaciones web eficientes. Trabajo con tecnologías como HTML, CSS, JavaScript, Node.js y más, brindando soluciones adaptadas a cada proyecto.">
-    <title>FFL</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+    <meta name="description" content="Fernando Flores - Desarrollador Full Stack especializado en JavaScript, React, Node.js. Creando soluciones web innovadoras y eficientes.">
+    <meta name="keywords" content="desarrollador web, full stack, JavaScript, React, Node.js, portfolio">
+    <title>Fernando Flores - Desarrollador Full Stack</title>
+    
+    <!-- Preload crítico -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" as="style">
+    <link rel="preload" href="public/css/styles.css" as="style">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
     <link rel="icon" href="icono.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="public/css/styles.css">
-    
-  </head>
-  <body data-dark>
- 
-
-    <!-- navigation bar -->
-    <div class="navigation-container" >
-      <div class="navigation-content page-width">
-        <a class="rtd" href="index.html"><h1 class="page-logo">FFL</h1></a>
-        <nav class="navbar">
-          <ul>
-            <li><a href="#about">Acerca</a></li>
-            <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#portafolio">Proyectos</a></li>
-            <li><a href="#contact">Contactos</a></li>
-          </ul>
-        </nav>
-        <button class="theme-dark">
-          <i class="bi bi-moon-stars-fill"></i>
-        </button>
-        
-      </div>
-      
-    </div>
-
-
-    <!-- hero image -->
-    <header class="hero-image" data-dark>
-      <div class="background">
-        <div class="hero-content">
-          <p class="hero-title">
-            ¡Hola! Mi nombre es <span><u>Fernando</u></span> y Soy 
-            desarrollador web Full Stack
-          </p>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navigation-container">
+        <div class="navigation-content page-width">
+            <a class="logo-link" href="#hero">
+                <h1 class="page-logo">FFL</h1>
+            </a>
+            <nav class="navbar">
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <i class="bi bi-list"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#about" class="nav-link">Acerca</a></li>
+                    <li><a href="#skills" class="nav-link">Habilidades</a></li>
+                    <li><a href="#portfolio" class="nav-link">Proyectos</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" aria-label="Cambiar tema">
+                <i class="bi bi-moon-stars-fill"></i>
+            </button>
         </div>
-      </div>
     </header>
 
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-background">
+            <div class="hero-content page-width">
+                <div class="hero-text">
+                    <h2 class="hero-title">
+                        ¡Hola! Soy <span class="highlight">Fernando</span>
+                    </h2>
+                    <p class="hero-subtitle">Desarrollador Full Stack</p>
+                    <p class="hero-description">
+                        Creo experiencias digitales innovadoras con tecnologías modernas
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#portfolio" class="btn btn-primary">Ver Proyectos</a>
+                        <a href="#contact" class="btn btn-secondary">Contáctame</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="public/img/developer.jpg" alt="Fernando Flores - Desarrollador" loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </section>
 
-    
     <main>
-
-
-      <!-- section about -->
-      <section id="about" class="about-container page-width padding-top">
-        <h2 class="about-title text-center"><u>Acerca de mi</u></h2>
-        <div class="about-content padding-top">
-          <p class="about-info">
-            Es un placer saludarte mi nombre es Fernando Flores, desarrollador Full Stack entusiasta
-            por aprender y aplicar nuevas tecnologías. Aunque soy nuevo en el
-            campo, tengo un sólido entendimiento de los conceptos básicos del
-            desarrollo web, tanto del lado del cliente como del servidor.
-            <br /><br />
-            He trabajado con HTML, CSS, JavaScript, y frameworks como React, así
-            como con Node.js y bases de datos SQL. Mi pasión por el aprendizaje
-            continuo me impulsa a explorar tecnologías emergentes y a mejorar
-            mis habilidades. <br /><br />
-            Me encantan los perros 🐶 y el anime. Estoy emocionado por
-            contribuir a proyectos desafiantes.
-          </p>
-          <div class="about-presentation text-center">
-            <figure>
-              <img src="public/img/developer.jpg" alt="fernando" />
-            </figure>
-            
-            <p class="is">Systems Engineer</p>
-          </div>
-        </div>
-      </section>
-
-
-      <!-- skills section -->
-      <section id="skills" class="skills-container page-width padding-top">
-        <h2 class="skills-title text-center"><u>Habilidades</u></h2>
-        <div class="skills-content padding-top text-center">
-          <figure>
-            <img src="public/img/html-5-svgrepo-com.svg" alt="HTML" />
-            <p>HTML5</p>
-          </figure>
-          <figure>
-            <img src="public/img/css-3-svgrepo-com.svg" alt="CSS" />
-            <P>CSS3</P>
-          </figure>
-          <figure>
-            <img src="public/img/js-svgrepo-com.svg" alt="JavaScript" />
-            <p>JavaScript</p>
-          </figure>
-          <figure>
-            <img src="public/img/react-svgrepo-com.svg" alt="React" />
-            <p>React</p>
-          </figure>
-          <figure>
-            <img src="public/img/node-js-svgrepo-com.svg" alt="Node.js" />
-            <p>Node.js</p>
-          </figure>
-          <figure>
-            <img src="public/img/sql-database-generic-svgrepo-com.svg" alt="SQL" />
-            <p>SQL</p>
-          </figure>
-          <figure>
-            <img src="public/img/github-142-svgrepo-com.png" alt="GitHub" />
-            <p>GitHub</p>
-          </figure>
-          <figure>
-            <img src="public/img/python-svgrepo-com.svg" alt="Python" />
-            <p>Python</p>
-          </figure>
-          <figure>
-            <img src="public/img/php-1-logo-svgrepo-com.svg" alt="PHP" />
-            <p>PHP</p>
-          </figure>
-          <figure>
-            <img src="public/img/java-svgrepo-com.svg" alt="Java" />
-            <p>Java</p>
-          </figure>
-        </div>
-      </section>
-
-
-      <!-- portafolio section -->
-      <section id="portafolio" class="page-width padding-top">
-        <h2 class="portafolio-title text-center"><u>Proyectos</u></h2>
-        <div class="portafolio-content padding-top text-center">
-          <figure>
-            <div class="card-image">
-              <img src="public/img/task.png" alt="task" />
+        <!-- About Section -->
+        <section id="about" class="about-section page-width">
+            <h2 class="section-title">Acerca de Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Soy <strong>Fernando Flores</strong>, un apasionado desarrollador Full Stack 
+                        con enfoque en crear soluciones web eficientes y escalables. 
+                        Mi journey en el desarrollo me ha llevado a dominar tecnologías 
+                        tanto del frontend como del backend.
+                    </p>
+                    <p>
+                        Cuando no estoy codificando, disfruto del anime 🎌 y pasar tiempo 
+                        con mi perro 🐶. Siempre estoy aprendiendo nuevas tecnologías 
+                        y mejorando mis habilidades.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Años de Experiencia</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Proyectos Completados</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="public/img/developer.jpg" alt="Fernando Flores" loading="lazy" />
+                    <div class="image-overlay">
+                        <span class="role-tag">Systems Engineer</span>
+                    </div>
+                </div>
             </div>
-            <div class="portafolio-description">
-              <h4>Sistema de gestion de tareas</h4>
-              <p>Esta es una aplicación web simple para la gestión de tareas. Permite a los usuarios crear, editar y eliminar tareas, así como marcarlas como completadas.</p>
-              <h5>Tecnologias usadas</h5>
-              <ul class="portafolio-technologies">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Javascript</li>
-              </ul>
-              <a href="https://lohapgr.github.io/CRUD_app/" target="_blank" rel="noopener noreferrer">=> Ver proyecto</a>
-            </div>
+        </section>
 
-          </figure>
-
-          <figure>
-            <div class="card-image">
-              <img src="public/img/recetas.png" alt="recipe" />
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section page-width">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <img src="public/img/html-5-svgrepo-com.svg" alt="HTML5" />
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="public/img/css-3-svgrepo-com.svg" alt="CSS3" />
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="public/img/js-svgrepo-com.svg" alt="JavaScript" />
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="public/img/react-svgrepo-com.svg" alt="React" />
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <img src="public/img/node-js-svgrepo-com.svg" alt="Node.js" />
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="public/img/python-svgrepo-com.svg" alt="Python" />
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="public/img/php-1-logo-svgrepo-com.svg" alt="PHP" />
+                            <span>PHP</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="public/img/java-svgrepo-com.svg" alt="Java" />
+                            <span>Java</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Herramientas</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <img src="public/img/sql-database-generic-svgrepo-com.svg" alt="SQL" />
+                            <span>SQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="public/img/github-142-svgrepo-com.png" alt="GitHub" />
+                            <span>GitHub</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="portafolio-description">
-              <h4>FFLRecetas</h4>
-              <p>FFLRecetas es una aplicación web diseñada para compartir las mejores recetas de comida peruana. Los usuarios pueden explorar una lista de recetas, ver los detalles de cada una y disfrutar de la riqueza gastronómica peruana.</p>
-              <h5>Tecnologías usadas</h5>
-              <ul class="portafolio-technologies">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>API personalizada (Node js)</li>
-              </ul>
-              <a href="https://lohapgr.github.io/recetas/" target="_blank" rel="noopener noreferrer">=> Ver proyecto</a>
-            </div>
-          </figure>
-          
+        </section>
 
-          <figure>
-            <div class="card-image">
-              <img src="public/img/api_recetas.png" alt="API de Recetas" />
-            </div>
-            <div class="portafolio-description">
-              <h4>API de Recetas</h4>
-              <p>Una API sencilla que permite consultar una colección de recetas de comida peruana. Ofrece dos endpoints principales: uno para obtener todas las recetas disponibles y otro para consultar los detalles de una receta específica por su ID.</p>
-              <h5>Tecnologías usadas</h5>
-              <ul class="portafolio-technologies">
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>JavaScript</li>
-                <li>REST API</li>
-              </ul>
-              <a href="https://easy-recipes.up.railway.app/documentacion" target="_blank" rel="noopener noreferrer">=> Ver proyecto</a>
-            </div>
-          </figure>
-          
-          
-        </div>
-      </section>
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio-section page-width">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="portfolio-grid">
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="public/img/task.png" alt="Sistema de Gestión de Tareas" loading="lazy" />
+                    </div>
+                    <div class="project-content">
+                        <h3>Sistema de Gestión de Tareas</h3>
+                        <p>Aplicación web para crear, editar y eliminar tareas con marcado de completado.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://lohapgr.github.io/CRUD_app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Ver Proyecto <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="public/img/recetas.png" alt="FFLRecetas" loading="lazy" />
+                    </div>
+                    <div class="project-content">
+                        <h3>FFLRecetas</h3>
+                        <p>Plataforma para explorar recetas de comida peruana con API personalizada.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://lohapgr.github.io/recetas/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Ver Proyecto <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
-      <!-- contact section -->
-      <section id="contact" class="contact-container page-width padding-top">
-        <h2 class="contact-title text-center"><u>Redes sociales</u></h2>
-        <div class="contact-content">
-          <figure>
-            <a href="https://www.linkedin.com/in/fernando-jesus-flores-leonardo-6479aa323/" rel="noopener noreferrer"><img src="public/img/linkedin.svg" alt="logo de linkedIn"></a>
-          </figure>
-          <figure>
-            <a href="https://www.instagram.com/loha_pgr/" rel="noopener noreferrer"><img src="public/img/instagram.svg" alt="logo de instagram"></a>
-          </figure>
-          <figure>
-            <a href="https://github.com/LohaPgr" rel="noopener noreferrer"><img src="public/img/github.svg" alt="logo de github"></a>
-          </figure>
-        </div>
-      </section>
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="public/img/api_recetas.png" alt="API de Recetas" loading="lazy" />
+                    </div>
+                    <div class="project-content">
+                        <h3>API de Recetas</h3>
+                        <p>API REST para consultar recetas peruanas con documentación completa.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://easy-recipes.up.railway.app/documentacion" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Ver Proyecto <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section page-width">
+            <h2 class="section-title">Conectemos</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+                    <p>Estoy siempre abierto a nuevas oportunidades y colaboraciones.</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/fernando-jesus-flores-leonardo-6479aa323/" 
+                       target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="bi bi-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/LohaPgr" 
+                       target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="bi bi-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.instagram.com/loha_pgr/" 
+                       target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="bi bi-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-
-
-    <!-- footer section -->
-    <footer>
-      <small>@Pagina web de fernandofl</small>
+    <footer class="footer">
+        <div class="page-width">
+            <p>&copy; 2024 Fernando Flores. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
-
-    <!-- button section -->
-    <button class="scroll-top-btn hidden">&#11014;</button>
+    <button class="scroll-top-btn hidden" aria-label="Volver arriba">
+        <i class="bi bi-chevron-up"></i>
+    </button>
 
     <script src="public/js/main.js" type="module"></script>
-  </body>
+</body>
 </html>

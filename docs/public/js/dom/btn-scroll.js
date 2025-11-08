@@ -1,26 +1,38 @@
-const d = document,
-  w = window;
+export default function scrollTop(btn) {
+    const $scrollBtn = document.querySelector(btn);
+    
+    if (!$scrollBtn) return;
 
-export default function btnScroll(btn) {
-  const $scrollBtn = d.querySelector(btn);
-  w.addEventListener("scroll", (e) => {
-    let scrollTop = w.pageYOffset || d.documentElement.scrollTop;
+    const scrollThreshold = 300;
+    let scrollTimeout;
 
-    if (scrollTop > 600) {
-      $scrollBtn.classList.remove("hidden");
-    } else {
-      $scrollBtn.classList.add("hidden");
-    }
+    const handleScroll = () => {
+        clearTimeout(scrollTimeout);
+        
+        scrollTimeout = setTimeout(() => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > scrollThreshold) {
+                $scrollBtn.classList.remove('hidden');
+                $scrollBtn.classList.add('visible');
+            } else {
+                $scrollBtn.classList.remove('visible');
+                $scrollBtn.classList.add('hidden');
+            }
+        }, 100);
+    };
 
-    // console.log(w.pageYOffset, d.documentElement.scrollTop);
-  });
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(btn)) {
-      w.scrollTo({
-        behavior: "smooth",
-        top: 0,
-        //left: 0,
-      });
-    }
-  });
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    // Event listeners
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    $scrollBtn.addEventListener('click', scrollToTop);
+
+    // Inicializar estado
+    handleScroll();
 }

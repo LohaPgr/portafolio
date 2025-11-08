@@ -7,12 +7,12 @@ class PortfolioApp {
     }
 
     init() {
-        // Inicializar componentes
         this.initDarkTheme();
         this.initScrollTop();
         this.initSmoothScroll();
         this.initMobileMenu();
         this.initAnimations();
+        this.initNavigationBackground();
     }
 
     initDarkTheme() {
@@ -25,9 +25,10 @@ class PortfolioApp {
 
     initSmoothScroll() {
         document.addEventListener('click', (e) => {
-            if (e.target.matches('.nav-link')) {
+            const navLink = e.target.closest('.nav-link');
+            if (navLink) {
                 e.preventDefault();
-                const targetId = e.target.getAttribute('href');
+                const targetId = navLink.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
@@ -48,6 +49,14 @@ class PortfolioApp {
             menuToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
                 menuToggle.classList.toggle('active');
+                
+                // Cambiar icono del menú
+                const icon = menuToggle.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.className = 'bi bi-x';
+                } else {
+                    icon.className = 'bi bi-list';
+                }
             });
 
             // Cerrar menú al hacer click en un link
@@ -55,7 +64,19 @@ class PortfolioApp {
                 link.addEventListener('click', () => {
                     navMenu.classList.remove('active');
                     menuToggle.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.className = 'bi bi-list';
                 });
+            });
+
+            // Cerrar menú al hacer click fuera de él
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.navbar') && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.className = 'bi bi-list';
+                }
             });
         }
     }
@@ -76,8 +97,22 @@ class PortfolioApp {
         }, observerOptions);
 
         // Observar elementos para animar
-        document.querySelectorAll('.project-card, .skill-category, .about-content').forEach(el => {
+        document.querySelectorAll('.project-card, .skill-category, .about-content, .contact-content').forEach(el => {
             observer.observe(el);
+        });
+    }
+
+    initNavigationBackground() {
+        const navigation = document.querySelector('.navigation-container');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navigation.style.background = 'var(--bg-color)';
+                navigation.style.backdropFilter = 'blur(10px)';
+            } else {
+                navigation.style.background = 'transparent';
+                navigation.style.backdropFilter = 'none';
+            }
         });
     }
 }

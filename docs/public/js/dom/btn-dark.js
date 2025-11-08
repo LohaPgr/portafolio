@@ -20,21 +20,19 @@ export default function darkTheme(btn, classDark) {
         // Actualizar icono y atributos
         $icon.className = themes[theme].icon;
         $themeBtn.setAttribute('aria-label', themes[theme].label);
+        document.documentElement.setAttribute('data-theme', theme);
         
-        // Aplicar clase a elementos
-        $selectors.forEach(el => {
-            el.setAttribute('data-theme', theme);
-            el.classList.toggle(classDark, isDark);
-        });
+        // Aplicar clase a elementos específicos si es necesario
+        document.body.classList.toggle(classDark, isDark);
         
         // Guardar preferencia
         localStorage.setItem('theme', theme);
         
         // Actualizar meta theme-color
-        this.updateMetaThemeColor(isDark);
+        updateMetaThemeColor(isDark);
     };
 
-    this.updateMetaThemeColor = (isDark) => {
+    const updateMetaThemeColor = (isDark) => {
         let metaTheme = document.querySelector('meta[name="theme-color"]');
         if (!metaTheme) {
             metaTheme = document.createElement('meta');
@@ -55,12 +53,23 @@ export default function darkTheme(btn, classDark) {
 
     // Inicializar tema
     document.addEventListener('DOMContentLoaded', () => {
-        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedTheme = localStorage.getItem('theme');
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const preferredTheme = savedTheme !== 'light' && savedTheme !== 'dark' 
-            ? (systemPrefersDark ? 'dark' : 'light')
-            : savedTheme;
+        
+        let preferredTheme;
+        if (savedTheme === 'light' || savedTheme === 'dark') {
+            preferredTheme = savedTheme;
+        } else {
+            preferredTheme = systemPrefersDark ? 'dark' : 'light';
+        }
         
         applyTheme(preferredTheme);
+    });
+
+    // Escuchar cambios del sistema
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+        }
     });
 }
